@@ -179,7 +179,7 @@ namespace Login
             // lblResultado
             // 
             this.lblResultado.AutoSize = true;
-            this.lblResultado.Location = new System.Drawing.Point(12, 175);
+            this.lblResultado.Location = new System.Drawing.Point(12, 177);
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new System.Drawing.Size(0, 13);
             this.lblResultado.TabIndex = 13;
@@ -187,7 +187,7 @@ namespace Login
             // lblNovoUsuario
             // 
             this.lblNovoUsuario.AutoSize = true;
-            this.lblNovoUsuario.Location = new System.Drawing.Point(172, 175);
+            this.lblNovoUsuario.Location = new System.Drawing.Point(172, 177);
             this.lblNovoUsuario.Name = "lblNovoUsuario";
             this.lblNovoUsuario.Size = new System.Drawing.Size(0, 13);
             this.lblNovoUsuario.TabIndex = 14;

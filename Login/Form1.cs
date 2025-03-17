@@ -47,8 +47,8 @@ namespace Login
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            lblResultado.Text = " ";
-            lblNovoUsuario.Text = " ";
+            lblResultado.Show();
+            lblNovoUsuario.Hide();
             string usuarioBuscado = txtLoginUser.Text;
             string senha = txtLoginSenha.Text;
 
@@ -93,8 +93,8 @@ namespace Login
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            lblResultado.Text = " ";
-            lblNovoUsuario.Text = " ";
+            lblResultado.Hide();
+            lblNovoUsuario.Show();
 
             string usuarioCadastrado = txtNUser.Text;
             string senha = txtNSenha.Text;
@@ -117,6 +117,19 @@ namespace Login
                 cadastrar = false;
                 return;
             }
+
+            for(int i = 0; i < usuarios.Count; i++)
+            {
+                if(usuarios[i].Email == usuarioCadastrado)
+                {
+                    lblNovoUsuario.Text = "Usuário indisponível.";
+                    lblNovoUsuario.ForeColor = Color.Red;
+                    txtNUser.Focus();
+                    cadastrar = false;
+                    return;
+                }
+            }
+
             if (cadastrar)
             {
                 usuarios.Add(new Usuario()
@@ -127,6 +140,8 @@ namespace Login
 
                 lblNovoUsuario.Text = "Cadastrado o(*°▽°*)o";
                 lblNovoUsuario.ForeColor = Color.Green;
+                txtNUser.Clear();
+                txtNSenha.Clear();
             }
         }
     }
